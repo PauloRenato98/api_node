@@ -6,7 +6,7 @@ require('dotenv').config();
 const server = express();
 
 
-mongoose.connect(process.env.DB_HOST, { useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.DB_HOST, { useNewUrlParser: true }, () => {
     console.log('CONECTADO');
 });
 
@@ -17,7 +17,7 @@ server.use(express.json());
 server.use(routes);
 
 
-server.listen(4444, () => {
+server.listen(3333, () => {
     console.log('Api rodando')
 });
 
