@@ -6,8 +6,11 @@ require('dotenv').config();
 const server = express();
 
 
-mongoose.connect(process.env.DB_HOST, { useNewUrlParser: true }, () => {
-    console.log('CONECTADO');
+mongoose.connect(process.env.MONGO_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+}, () => {
+    console.log('Banco de Dados conectado');
 });
 
 //require('./controller/authController')(server);
