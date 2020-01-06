@@ -17,7 +17,7 @@ server.use(express.json());
 server.use(routes);
 
 
-server.listen(3333, () => {
+server.listen(process.env.APP_URL, () => {
     console.log('Api rodando')
 });
 
