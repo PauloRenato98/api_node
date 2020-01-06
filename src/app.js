@@ -18,7 +18,6 @@ server.use(routes);
 
 
 server.listen(4444, () => {
-    console.log();
     console.log('Api rodando')
 });
 
