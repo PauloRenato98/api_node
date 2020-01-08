@@ -4,8 +4,8 @@ const Igreja = require('../model/igreja');
 module.exports = {
     async index(req, res) {
 
-        const teste = await Igreja.find();
-        return res.json(teste);
+        const igrejascadastradas = await Igreja.find();
+        return res.json(igrejascadastradas);
 
 
     },
