@@ -1,7 +1,5 @@
 const server = require('express');
-const DadosIgrejaController = require('./controller/DadosIgrejasController');
 const IgrejaController = require('./controller/IgrejaController');
-
 
 const routes = server.Router();
 
@@ -14,8 +12,5 @@ routes.get('/testando', (req, res) => {
 })
 
 routes.get('/igrejas', IgrejaController.index);
-
-
-
 
 module.exports = routes;
