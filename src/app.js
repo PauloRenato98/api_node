@@ -4,7 +4,8 @@ const routes = require('./routes');
 require('dotenv').config();
 
 const server = express();
-
+server.use(express.json());
+server.use(routes);
 
 mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true,
@@ -13,11 +14,10 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log('Banco de Dados conectado');
 });
 
-//require('./controller/authController')(server);
+require('./controller/authController')(server);
 
-server.use(express.json());
 
-server.use(routes);
+
 
 
 server.listen(process.env.PORT || 3333);
