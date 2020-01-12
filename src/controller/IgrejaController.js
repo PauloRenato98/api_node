@@ -4,13 +4,15 @@ const Igreja = require('../model/igreja');
 module.exports = {
     async index(req, res) {
 
-        const igrejascadastradas = await Igreja.find();
-        return res.json(igrejascadastradas);
+        const igrejacadastrada = await Igreja.find();
+        return res.json(igrejacadastrada);
 
 
     },
     async  store(req, res) {
         const { name, horarios, imagem, password } = req.body;
+
+        console.log(password);
 
         const igreja = await Igreja.create({
             name: name,
